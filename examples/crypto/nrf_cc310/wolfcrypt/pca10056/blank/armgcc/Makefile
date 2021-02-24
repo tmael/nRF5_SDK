@@ -6,7 +6,7 @@ SDK_ROOT := ../../../../../../..
 PROJ_DIR := ../../..
 
 $(OUTPUT_DIRECTORY)/nrf52840_xxaa.out: \
-  LINKER_SCRIPT  := aes_gcc_nrf52.ld
+  LINKER_SCRIPT  := wolfcrypt_gcc_nrf52.ld
 
 # Source files common to all targets
 SRC_FILES += \
@@ -34,7 +34,6 @@ SRC_FILES += \
   $(SDK_ROOT)/modules/nrfx/drivers/src/prs/nrfx_prs.c \
   $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_uart.c \
   $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_uarte.c \
-  $(PROJ_DIR)/integration_test_ssi_aes_vectors.c \
   $(PROJ_DIR)/main.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT_Syscalls_GCC.c \
@@ -237,7 +236,7 @@ SRC_FILES += \
 # Test source code
 
   SRC_FILES += \
-  $(SDK_ROOT)/external/wolfssl/wolfcrypt/test/test_aes.c \
+  $(SDK_ROOT)/external/wolfssl/wolfcrypt/test/test.c \
   $(SDK_ROOT)/external/wolfssl/wolfcrypt/benchmark/benchmark.c \
 
 
